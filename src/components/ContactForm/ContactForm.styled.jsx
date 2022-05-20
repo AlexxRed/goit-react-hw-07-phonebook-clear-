@@ -5,7 +5,7 @@ import { Form, Field } from 'formik';
 export const MainForm = styled(Form)`
   width: 200px;
   padding: 20px 100px 20px 20px;
-  border: black;
+  border: #2778a7;
   border-radius: 4px;
 `;
 
@@ -27,6 +27,6 @@ export const ButtonAdd = styled.button`
   font-weight: 500;
   &:hover,
   &:focus {
-    background-color: #237e58;
+    background-color: #23647e;
   }
 `;

@@ -8,7 +8,7 @@ export const ItemList = styled.label`
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: black;
+        background-color: #446b85;
         margin-right: 15px;
         margin-left: 30px;
     }
@@ -24,6 +24,6 @@ export const ButtonDelete = styled.button`
     font-weight: 500;
     &:hover,
     &:focus {
-        background-color: green;
+        background-color: #25834f;
     }
 `;

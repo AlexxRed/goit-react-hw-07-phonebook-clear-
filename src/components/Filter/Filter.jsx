@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Filter = () => {
     const dispatch = useDispatch();
-    const filter = useSelector(state => state.filter.value)
+    const filter = useSelector(state => state.filter.value);
 
     const changeFilter = e => {
-        dispatch(setFilter(e.currentTarget.value))
+        dispatch(setFilter(e.currentTarget.value));
     };
 
     return (<Label>

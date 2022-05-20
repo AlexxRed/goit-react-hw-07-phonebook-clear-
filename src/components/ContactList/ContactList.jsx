@@ -9,16 +9,14 @@ const ContactList = () => {
   const { data = [] } = useGetContactsQuery();
   const [deleteContacts] = useDeleteContactMutation();
   const filter = useSelector(state => state.filter.value);
-  // console.log(data);
-
 
   const visibleContacts = useMemo(
     () => {
-        const normalizedFilter = filter.toLowerCase();
-        return data.filter(el =>
+      const normalizedFilter = filter.toLowerCase();
+      return data.filter(el =>
         el.name.toLowerCase().includes(normalizedFilter)
-        );
-    },[data, filter])
+      );
+    }, [data, filter]);
     
     //   const getVisibleContacts = useCallback(
     // () => {
@@ -31,7 +29,6 @@ const ContactList = () => {
 
   const deleteContact = id => {
     deleteContacts(id);
-    console.log(id);
   };
 
   return(

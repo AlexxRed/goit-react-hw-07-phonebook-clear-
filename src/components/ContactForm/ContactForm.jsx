@@ -5,8 +5,6 @@ import { MainForm, Label, InputForm, ButtonAdd } from './ContactForm.styled';
 import { useAddNewContactMutation } from '../../redux/contactsSlice';
 
 
-const renderError = message => <p>{message}</p>;
-
 function ContactForm() {
     const [addNewContact] = useAddNewContactMutation();
 
@@ -23,6 +21,9 @@ function ContactForm() {
         addNewContact(newContact);
         resetForm();
     };
+
+    
+    const renderError = message => <p>{message}</p>;
 
     return (
         <Formik
