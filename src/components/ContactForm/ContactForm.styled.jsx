@@ -27,6 +27,6 @@ export const ButtonAdd = styled.button`
   font-weight: 500;
   &:hover,
   &:focus {
-    background-color: white;
+    background-color: #237e58;
   }
 `;

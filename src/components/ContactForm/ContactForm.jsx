@@ -2,22 +2,25 @@ import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import { schema } from '../../constants/validationSchema';
 import { MainForm, Label, InputForm, ButtonAdd } from './ContactForm.styled';
+import { useAddNewContactMutation } from '../../redux/contactsSlice';
 
 
 const renderError = message => <p>{message}</p>;
 
 function ContactForm() {
+    const [addNewContact] = useAddNewContactMutation();
+
     const initialValues = {
         name: '',
         number: '',
     };
 
-    const handleSubmit = ({name, number}, { resetForm }) => {
+    const handleSubmit = ({ name, number }, { resetForm }) => {
         const newContact = {
-        name,
-        number,
+            name,
+            number,
         };
-        console.log(newContact);
+        addNewContact(newContact);
         resetForm();
     };
 

@@ -1,18 +1,36 @@
 import { ButtonDelete, ItemList } from './ContactList.styled';
+import { useGetContactsQuery, useDeleteContactMutation } from '../../redux/contactsSlice';
+import { useSelector } from 'react-redux';
+import { useMemo } from 'react';
+
+
 
 const ContactList = () => {
+  const { data = [] } = useGetContactsQuery();
+  const [deleteContacts] = useDeleteContactMutation();
+  const filter = useSelector(state => state.filter.value);
+  // console.log(data);
 
 
-    // const getVisibleContacts = () => {
-    //     const normalizedFilter = filtredList.toLowerCase();
-    //     return conactsList.filter(el =>
+  const visibleContacts = useMemo(
+    () => {
+        const normalizedFilter = filter.toLowerCase();
+        return data.filter(el =>
+        el.name.toLowerCase().includes(normalizedFilter)
+        );
+    },[data, filter])
+    
+    //   const getVisibleContacts = useCallback(
+    // () => {
+    //     const normalizedFilter = filter.toLowerCase();
+    //     return data.filter(el =>
     //     el.name.toLowerCase().includes(normalizedFilter)
     //     );
-    // };
-  
-  const visibleContacts = [];
+    // },[data, filter])
+  // const visibleContacts = [];
 
   const deleteContact = id => {
+    deleteContacts(id);
     console.log(id);
   };
 
