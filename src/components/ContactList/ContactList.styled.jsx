@@ -1,5 +1,15 @@
 import styled from '@emotion/styled';
 
+export const List = styled.ul`
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+`;
+
+
 export const ItemList = styled.label`
     display: flex;
     align-items: center;
