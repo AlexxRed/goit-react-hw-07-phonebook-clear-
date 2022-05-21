@@ -10,9 +10,11 @@ export const List = styled.ul`
 `;
 
 
-export const ItemList = styled.label`
+export const ItemList = styled.li`
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dotted #2778a7;
     &::before {
         content: '';
         width: 8px;
@@ -36,4 +38,12 @@ export const ButtonDelete = styled.button`
     &:focus {
         background-color: #25834f;
     }
+`;
+
+export const ContactName = styled.span`
+    display:block;
+`;
+
+export const ContactNumber = styled.span`
+    display:block;
 `;

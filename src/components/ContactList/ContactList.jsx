@@ -1,4 +1,4 @@
-import { List,ButtonDelete, ItemList } from './ContactList.styled';
+import { List,ButtonDelete, ItemList, ContactName, ContactNumber } from './ContactList.styled';
 import { useGetContactsQuery, useDeleteContactMutation } from '../../redux/contactsSlice';
 import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
@@ -37,7 +37,8 @@ const ContactList = () => {
     {visibleContacts.map(({ id, name, number, phone }) => (
       <ItemList key={id}>
         <p>
-          {name}: {number??phone}
+          <ContactName>{name}:</ContactName>
+          <ContactNumber>{number??phone}</ContactNumber>
         </p>
         <ButtonDelete type="button" onClick={() => deleteContact(id)}>
           Delete
