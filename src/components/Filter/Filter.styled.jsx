@@ -11,5 +11,7 @@ export const Label = styled.label`
 `;
 
 export const InputFilter = styled.input`
-    margin-top: 5px;
+        padding: 5px;
+        margin-top: 5px;
+        background-color: #749166;
 `;

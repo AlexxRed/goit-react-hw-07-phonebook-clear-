@@ -3,6 +3,7 @@ import { Formik, ErrorMessage } from 'formik';
 import { schema } from '../../constants/validationSchema';
 import { MainForm, Label, InputForm, ButtonAdd } from './ContactForm.styled';
 import { useAddNewContactMutation } from '../../redux/contactsSlice';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
 function ContactForm() {
@@ -23,7 +24,7 @@ function ContactForm() {
     };
 
     
-    const renderError = message => <p>{message}</p>;
+    const renderError = message => Notify.info(`${message}`);
 
     return (
         <Formik

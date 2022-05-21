@@ -10,7 +10,7 @@ export function infoStyle() {
     opacity: 0.95,
     borderRadius: '5px',
     rtl: false,
-    timeout: 2000,
+    timeout: 1000,
     messageMaxLength: 110,
     backOverlay: false,
     backOverlayColor: 'rgba(0,0,0,0.9)',

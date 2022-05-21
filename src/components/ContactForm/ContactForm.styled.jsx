@@ -19,6 +19,7 @@ export const InputForm = styled(Field)`
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 10px;
+  background-color: #868d79;
 `;
 
 export const ButtonAdd = styled.button`
