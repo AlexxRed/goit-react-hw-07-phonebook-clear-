@@ -38,7 +38,7 @@ const ContactList = () => {
       <ItemList key={id}>
         <p>
           <ContactName>{name}:</ContactName>
-          <ContactNumber>{number??phone}</ContactNumber>
+          <ContactNumber href={`tel:${number??phone}`}>{number??phone}</ContactNumber>
         </p>
         <ButtonDelete type="button" onClick={() => deleteContact(id)}>
           Delete

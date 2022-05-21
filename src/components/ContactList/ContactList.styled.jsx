@@ -44,6 +44,6 @@ export const ContactName = styled.span`
     display:block;
 `;
 
-export const ContactNumber = styled.span`
+export const ContactNumber = styled.a`
     display:block;
 `;
