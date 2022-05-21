@@ -19,6 +19,10 @@ function ContactForm() {
             name,
             number,
         };
+        console.log(newContact.number.length);
+        if (newContact.number.length < 6) {
+            Notify.info('Phone number must be more than 6 numbers');
+        }
         addNewContact(newContact);
         resetForm();
     };
