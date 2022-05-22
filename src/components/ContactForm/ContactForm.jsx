@@ -4,7 +4,8 @@ import { schema } from '../../constants/validationSchema';
 import { MainForm, Label, InputForm, ButtonAdd } from './ContactForm.styled';
 import { useAddNewContactMutation } from '../../redux/contactsSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { useGetContactsQuery} from '../../redux/contactsSlice';
+import { useGetContactsQuery } from '../../redux/contactsSlice';
+
 
 
 function ContactForm() {

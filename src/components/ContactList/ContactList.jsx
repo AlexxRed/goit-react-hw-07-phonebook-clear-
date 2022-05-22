@@ -2,11 +2,12 @@ import { List,ButtonDelete, ItemList, ContactName, ContactNumber } from './Conta
 import { useGetContactsQuery, useDeleteContactMutation } from '../../redux/contactsSlice';
 import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
+import { Loader } from 'components/Loader/Loader';
 
 
 
 const ContactList = () => {
-  const { data = [] } = useGetContactsQuery();
+  const { data = [], isLoading } = useGetContactsQuery();
   const [deleteContacts] = useDeleteContactMutation();
   const filter = useSelector(state => state.filter.value);
 
@@ -33,6 +34,7 @@ const ContactList = () => {
 
   return(
     <List>
+    {isLoading && <Loader/>}
     {visibleContacts.length === 0 && <h3>...oops has no contacts :(</h3>}
     {visibleContacts.map(({ id, name, number, phone }) => (
       <ItemList key={id}>
