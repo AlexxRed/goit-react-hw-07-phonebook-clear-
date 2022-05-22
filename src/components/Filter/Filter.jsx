@@ -11,7 +11,7 @@ const Filter = () => {
 
     const changeFilter = e => {
         if (e.currentTarget.value === '') {
-            Notify.info('who are you looking for')
+            Notify.info('Who are you looking for?')
         }
         dispatch(setFilter(e.currentTarget.value));
     };
