@@ -4,9 +4,12 @@ import { schema } from '../../constants/validationSchema';
 import { MainForm, Label, InputForm, ButtonAdd } from './ContactForm.styled';
 import { useAddNewContactMutation } from '../../redux/contactsSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { useGetContactsQuery} from '../../redux/contactsSlice';
 
 
 function ContactForm() {
+    const { data = [] } = useGetContactsQuery();
+    console.log(data);
     const [addNewContact] = useAddNewContactMutation();
 
     const initialValues = {
@@ -19,9 +22,13 @@ function ContactForm() {
             name,
             number,
         };
-        console.log(newContact.number.length);
         if (newContact.number.length < 6) {
             Notify.info('Phone number must be more than 6 numbers');
+            return
+        }
+        if (data.find(contact => contact.name === newContact.name)) {
+            Notify.info('Contact with this name already exists')
+            return
         }
         addNewContact(newContact);
         resetForm();
