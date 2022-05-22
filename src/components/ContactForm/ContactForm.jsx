@@ -9,7 +9,6 @@ import { useGetContactsQuery} from '../../redux/contactsSlice';
 
 function ContactForm() {
     const { data = [] } = useGetContactsQuery();
-    console.log(data);
     const [addNewContact] = useAddNewContactMutation();
 
     const initialValues = {
@@ -26,7 +25,7 @@ function ContactForm() {
             Notify.info('Phone number must be more than 6 numbers');
             return
         }
-        if (data.find(contact => contact.name === newContact.name)) {
+        if (data.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
             Notify.info('Contact with this name already exists')
             return
         }
